@@ -22,7 +22,6 @@ const App = () => {
             <Route index element={<LadinPage />} />      
 
             <Route path='auth/*' element={<Auth />}>
-              <Route path="home" element={(<Dashboard />)} />
               <Route path="clientes" element={<Conferencistas />} />
               <Route path="tecnicos" element={<Auditorias />} />
               <Route path="tickets" element={<Reservas />} />

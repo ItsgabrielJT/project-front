@@ -36,7 +36,7 @@ export const LadinPage = () => {
         //     .catch((error) => {
         //       console.log("errpr")
         //     });
-        navigate("/auth/home")
+        navigate("/auth/clientes")
     }
 
     return (

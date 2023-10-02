@@ -11,6 +11,25 @@ import { ordersData, contextMenuItems, ordersGrid } from '../data/dummy';
 import { employeesData, employeesGrid } from '../data/dummy';
 import { Header } from '../components';
 
+const data  = [
+  {
+    id: 1,
+    nombre: "Selma Alegre",
+    ciudad: "Quito",
+    telefono: "0987814188",
+    cedula: "17227879176",
+    email: "selam@gmail.com",
+  },
+  {
+    id: 2,
+    nombre: "Salvador Alegre",
+    ciudad: "Quito",
+    cedula: "17227870000",
+    telefono: "0987901988",
+    email: "salvador@gmail.com",
+  }
+]
+
 const Auditorias = () => {
   const [products, setProducts] = useState(null);
     const [statuses] = useState(['INSTOCK', 'LOWSTOCK', 'OUTOFSTOCK']);
@@ -32,7 +51,8 @@ const Auditorias = () => {
     }
 
     useEffect(async () => {
-        getData();
+        //getData();
+        setProducts(data)
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     const getSeverity = (value) => {
@@ -82,14 +102,6 @@ const Auditorias = () => {
         return <InputNumber value={options.value} onValueChange={(e) => options.editorCallback(e.value)} mode="currency" currency="USD" locale="en-US" />;
     };
 
-    const statusBodyTemplate = (rowData) => {
-        return <Tag value={rowData.inventoryStatus} severity={getSeverity(rowData.inventoryStatus)}></Tag>;
-    };
-
-    const priceBodyTemplate = (rowData) => {
-        return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(rowData.price);
-    };
-
     return (
 
         <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
@@ -118,7 +130,7 @@ const Auditorias = () => {
                 <label className="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2" for="grid-password">
                   Email
                 </label>
-                <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="email" placeholder="******************" />
+                <input className="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3" id="grid-password" type="text" placeholder="@example.com" />
                 <p className="text-grey-dark text-xs italic">Make it as long and as crazy as you'd like</p>
               </div>
             </div>
@@ -177,12 +189,12 @@ const Auditorias = () => {
             </div>
 
             <div className="card p-fluid">
-                <DataTable value={products} editMode="row" dataKey="id" onRowEditComplete={onRowEditComplete} tableStyle={{ minWidth: '50rem' }}>
+                <DataTable value={data} editMode="row" dataKey="id" onRowEditComplete={onRowEditComplete} tableStyle={{ minWidth: '50rem' }}>
                     <Column field="id" header="ID" editor={(options) => textEditor(options)} style={{ width: '20%' }}></Column>
                     <Column field="nombre" header="NOMBRES" editor={(options) => textEditor(options)} style={{ width: '20%' }}></Column>
-                    <Column field="cedula" header="CEDULA" body={statusBodyTemplate} editor={(options) => statusEditor(options)} style={{ width: '20%' }}></Column>
-                    <Column field="email" header="EMAIL" body={priceBodyTemplate} editor={(options) => priceEditor(options)} style={{ width: '20%' }}></Column>
-                    <Column field="telefono" header="TELEFONO" body={priceBodyTemplate} editor={(options) => priceEditor(options)} style={{ width: '20%' }}></Column>
+                    <Column field="cedula" header="CEDULA"  editor={(options) => statusEditor(options)} style={{ width: '20%' }}></Column>
+                    <Column field="email" header="EMAIL"  editor={(options) => priceEditor(options)} style={{ width: '20%' }}></Column>
+                    <Column field="telefono" header="TELEFONO"  editor={(options) => priceEditor(options)} style={{ width: '20%' }}></Column>
                     <Column rowEditor headerStyle={{ width: '10%', minWidth: '8rem' }} bodyStyle={{ textAlign: 'center' }}></Column>
                 </DataTable>
             </div>
