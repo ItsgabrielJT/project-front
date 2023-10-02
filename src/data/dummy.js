@@ -1,8 +1,7 @@
-import React from 'react';
 import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
 import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
+import { BiColorFill, BiHome } from 'react-icons/bi';
 import { IoMdContacts } from 'react-icons/io';
 import { RiContactsLine, RiStockLine } from 'react-icons/ri';
 import { MdOutlineSupervisorAccount } from 'react-icons/md';
@@ -26,7 +25,7 @@ import product8 from './product8.jpg';
 export const gridOrderImage = (props) => (
   <div>
     <img
-      className="rounded-xl h-20 md:ml-3"
+      classNameName="rounded-xl h-20 md:ml-3"
       src={props.ProductImage}
       alt="order-item"
     />
@@ -37,34 +36,43 @@ export const gridOrderStatus = (props) => (
   <button
     type="button"
     style={{ background: props.StatusBg }}
-    className="text-white py-1 px-2 capitalize rounded-2xl text-md"
+    classNameName="text-white py-1 px-2 capitalize rounded-2xl text-md"
   >
     {props.Status}
   </button>
 );
 
 export const kanbanGrid = [
-  { headerText: 'To Do',
+  {
+    headerText: 'To Do',
     keyField: 'Open',
-    allowToggle: true },
+    allowToggle: true
+  },
 
-  { headerText: 'In Progress',
+  {
+    headerText: 'In Progress',
     keyField: 'InProgress',
-    allowToggle: true },
+    allowToggle: true
+  },
 
-  { headerText: 'Testing',
+  {
+    headerText: 'Testing',
     keyField: 'Testing',
     allowToggle: true,
-    isExpanded: false },
+    isExpanded: false
+  },
 
-  { headerText: 'Done',
+  {
+    headerText: 'Done',
     keyField: 'Close',
-    allowToggle: true },
+    allowToggle: true
+  },
 ];
+
 const gridEmployeeProfile = (props) => (
-  <div className="flex items-center gap-2">
+  <div classNameName="flex items-center gap-2">
     <img
-      className="rounded-full w-10 h-10"
+      classNameName="rounded-full w-10 h-10"
       src={props.EmployeeImage}
       alt="employee"
     />
@@ -73,11 +81,12 @@ const gridEmployeeProfile = (props) => (
 );
 
 const gridEmployeeCountry = (props) => (
-  <div className="flex items-center justify-center gap-2">
+  <div classNameName="flex items-center justify-center gap-2">
     <GrLocation />
     <span>{props.Country}</span>
   </div>
 );
+
 export const EditorData = () => (
   <div>
     <h3>
@@ -120,10 +129,11 @@ export const EditorData = () => (
     </h3>
   </div>
 );
+
 const customerGridImage = (props) => (
-  <div className="image flex gap-4">
+  <div classNameName="image flex gap-4">
     <img
-      className="rounded-full w-10 h-10"
+      classNameName="rounded-full w-10 h-10"
       src={props.CustomerImage}
       alt="employee"
     />
@@ -135,11 +145,12 @@ const customerGridImage = (props) => (
 );
 
 const customerGridStatus = (props) => (
-  <div className="flex gap-2 justify-center items-center text-gray-700 capitalize">
-    <p style={{ background: props.StatusBg }} className="rounded-full h-3 w-3" />
+  <div classNameName="flex gap-2 justify-center items-center text-gray-700 capitalize">
+    <p style={{ background: props.StatusBg }} classNameName="rounded-full h-3 w-3" />
     <p>{props.Status}</p>
   </div>
 );
+
 export const areaPrimaryXAxis = {
   valueType: 'DateTime',
   labelFormat: 'y',
@@ -159,17 +170,20 @@ export const areaPrimaryYAxis = {
   labelStyle: { color: 'gray' },
 
 };
+
 export const barPrimaryXAxis = {
   valueType: 'Category',
   interval: 1,
   majorGridLines: { width: 0 },
 };
+
 export const barPrimaryYAxis = {
   majorGridLines: { width: 0 },
   majorTickLines: { width: 0 },
   lineStyle: { width: 0 },
   labelStyle: { color: 'transparent' },
 };
+
 const areaChartData = [
   [
     { x: new Date(2002, 0, 1), y: 2.2 },
@@ -302,6 +316,7 @@ export const barCustomSeries = [
     },
   },
 ];
+
 export const colorMappingData = [
   [
     { x: 'Jan', y: 6.96 },
@@ -323,20 +338,26 @@ export const colorMappingData = [
 ];
 
 export const rangeColorMapping = [
-  { label: '1°C to 10°C',
+  {
+    label: '1°C to 10°C',
     start: '1',
     end: '10',
-    colors: colorMappingData[1] },
+    colors: colorMappingData[1]
+  },
 
-  { label: '11°C to 20°C',
+  {
+    label: '11°C to 20°C',
     start: '11',
     end: '20',
-    colors: colorMappingData[2] },
+    colors: colorMappingData[2]
+  },
 
-  { label: '21°C to 30°C',
+  {
+    label: '21°C to 30°C',
     start: '21',
     end: '30',
-    colors: colorMappingData[3] },
+    colors: colorMappingData[3]
+  },
 
 ];
 
@@ -393,38 +414,50 @@ export const LinePrimaryYAxis = {
 
 export const customersGrid = [
   { type: 'checkbox', width: '50' },
-  { headerText: 'Name',
+  {
+    headerText: 'Name',
     width: '150',
     template: customerGridImage,
-    textAlign: 'Center' },
-  { field: 'ProjectName',
+    textAlign: 'Center'
+  },
+  {
+    field: 'ProjectName',
     headerText: 'Project Name',
     width: '150',
-    textAlign: 'Center' },
-  { field: 'Status',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Status',
     headerText: 'Status',
     width: '130',
     format: 'yMd',
     textAlign: 'Center',
-    template: customerGridStatus },
+    template: customerGridStatus
+  },
   {
     field: 'Weeks',
     headerText: 'Weeks',
     width: '100',
     format: 'C2',
-    textAlign: 'Center' },
-  { field: 'Budget',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Budget',
     headerText: 'Budget',
     width: '100',
     format: 'yMd',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 
-  { field: 'Location',
+  {
+    field: 'Location',
     headerText: 'Location',
     width: '150',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 
-  { field: 'CustomerID',
+  {
+    field: 'CustomerID',
     headerText: 'Customer ID',
     width: '120',
     textAlign: 'Center',
@@ -434,65 +467,68 @@ export const customersGrid = [
 ];
 
 export const employeesGrid = [
-  { headerText: 'Employee',
+  {
+    headerText: 'Employee',
     width: '150',
     template: gridEmployeeProfile,
-    textAlign: 'Center' },
-  { field: 'Name',
+    textAlign: 'Center'
+  },
+  {
+    field: 'Name',
     headerText: '',
     width: '0',
     textAlign: 'Center',
   },
-  { field: 'Title',
+  {
+    field: 'Title',
     headerText: 'Designation',
     width: '170',
     textAlign: 'Center',
   },
-  { headerText: 'Country',
+  {
+    headerText: 'Country',
     width: '120',
     textAlign: 'Center',
-    template: gridEmployeeCountry },
+    template: gridEmployeeCountry
+  },
 
-  { field: 'HireDate',
+  {
+    field: 'HireDate',
     headerText: 'Hire Date',
     width: '135',
     format: 'yMd',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 
-  { field: 'ReportsTo',
+  {
+    field: 'ReportsTo',
     headerText: 'Reports To',
     width: '120',
-    textAlign: 'Center' },
-  { field: 'EmployeeID',
+    textAlign: 'Center'
+  },
+  {
+    field: 'EmployeeID',
     headerText: 'Employee ID',
     width: '125',
-    textAlign: 'Center' },
+    textAlign: 'Center'
+  },
 ];
 
 export const links = [
-  {
-    title: 'Dashboard',
-    links: [
-      {
-        name: 'ecommerce',
-        icon: <FiShoppingBag />,
-      },
-    ],
-  },
 
   {
     title: 'Pages',
     links: [
       {
-        name: 'orders',
+        name: 'clientes',
         icon: <AiOutlineShoppingCart />,
       },
       {
-        name: 'employees',
+        name: 'tecnicos',
         icon: <IoMdContacts />,
       },
       {
-        name: 'customers',
+        name: 'tickets',
         icon: <RiContactsLine />,
       },
     ],
@@ -799,49 +835,44 @@ export const userProfileData = [
 
 export const ordersGrid = [
   {
-    headerText: 'Image',
-    template: gridOrderImage,
-    textAlign: 'Center',
-    width: '120',
-  },
-  {
-    field: 'OrderItems',
-    headerText: 'Item',
-    width: '150',
+    field: 'id',
+    headerText: 'ID',
+    width: '50',
     editType: 'dropdownedit',
     textAlign: 'Center',
   },
-  { field: 'CustomerName',
-    headerText: 'Customer Name',
+  {
+    field: 'CustomerName',
+    headerText: 'NOMBRES',
     width: '150',
     textAlign: 'Center',
   },
   {
     field: 'TotalAmount',
-    headerText: 'Total Amount',
+    headerText: 'CEDULA',
     format: 'C2',
     textAlign: 'Center',
     editType: 'numericedit',
     width: '150',
   },
   {
-    headerText: 'Status',
+    headerText: 'EMAIL',
     template: gridOrderStatus,
     field: 'OrderItems',
     textAlign: 'Center',
     width: '120',
   },
   {
-    field: 'OrderID',
-    headerText: 'Order ID',
+    field: 'id',
+    headerText: 'TELEFONOS',
     width: '120',
     textAlign: 'Center',
   },
 
   {
     field: 'Location',
-    headerText: 'Location',
-    width: '150',
+    headerText: '',
+    width: '80',
     textAlign: 'Center',
   },
 ];
@@ -1417,7 +1448,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar3,
+      avatar3,
   },
   {
     EmployeeID: 2,
@@ -1487,7 +1518,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1558,7 +1589,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar,
+      avatar,
   },
   {
     EmployeeID: 2,
@@ -1628,7 +1659,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1699,7 +1730,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1770,7 +1801,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1841,7 +1872,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1912,7 +1943,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -1983,7 +2014,7 @@ export const employeesData = [
     Country: 'USA',
     ReportsTo: 'Carson',
     EmployeeImage:
-    avatar2,
+      avatar2,
 
   },
   {
@@ -2050,19 +2081,58 @@ export const employeesData = [
 
 export const ordersData = [
   {
-    OrderID: 10248,
+    id: 10248,
     CustomerName: 'Vinet',
 
     TotalAmount: 32.38,
     OrderItems: 'Fresh Tomato',
-    Location: 'USA',
+    Location: (
+      <>
+        <div className="flex justify-end gap-4">
+          <a x-data="{ tooltip: 'Delete' }" href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="h-6 w-6"
+              x-tooltip="tooltip"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+              />
+            </svg>
+          </a>
+          <a x-data="{ tooltip: 'Edite' }" href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="h-6 w-6"
+              x-tooltip="tooltip"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125"
+              />
+            </svg>
+          </a>
+        </div>
+      </>
+    ),
     Status: 'pending',
     StatusBg: '#FB9678',
     ProductImage:
       product6,
   },
   {
-    OrderID: 345653,
+    id: 345653,
     CustomerName: 'Carson Darrin',
     TotalAmount: 56.34,
     OrderItems: 'Butter Scotch',
@@ -2073,7 +2143,7 @@ export const ordersData = [
       product5,
   },
   {
-    OrderID: 390457,
+    id: 390457,
     CustomerName: 'Fran Perez',
     TotalAmount: 93.31,
     OrderItems: 'Candy Gucci',
@@ -2084,7 +2154,7 @@ export const ordersData = [
       product7,
   },
   {
-    OrderID: 893486,
+    id: 893486,
     CustomerName: 'Anika Viseer',
     TotalAmount: 93.31,
     OrderItems: 'Night Lamp',
@@ -2095,151 +2165,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 748975,
-    CustomerName: 'Miron Vitold',
-    TotalAmount: 23.99,
-    OrderItems: 'Healthcare Erbology',
-    Location: 'Spain',
-    Status: 'rejected',
-    StatusBg: 'red',
-    ProductImage:
-    product1,
-  },
-  {
-    OrderID: 94757,
-    CustomerName: 'Omar Darobe',
-    TotalAmount: 95.99,
-    OrderItems: 'Makeup Lancome Rouge',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product2,
-  },
-  {
-    OrderID: 944895,
-    CustomerName: 'Lulia albu',
-    TotalAmount: 17.99,
-    OrderItems: 'Skincare',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product3,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Penjani',
-    TotalAmount: 59.99,
-    OrderItems: 'Headphone',
-    Location: 'USA',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 845954,
-    CustomerName: 'Jie Yan',
-    TotalAmount: 87.99,
-    OrderItems: 'Shoes',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 38489,
-    CustomerName: 'Miron',
-    TotalAmount: 87.99,
-    OrderItems: 'Ice Cream',
-    Location: 'USA',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
-  },
-  {
-    OrderID: 24546,
-    CustomerName: 'Frank',
-    TotalAmount: 84.99,
-    OrderItems: 'Pan Cake',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
-  },
-  {
-    OrderID: 874534,
-    CustomerName: 'Danai',
-    TotalAmount: 122.99,
-    OrderItems: 'Watch',
-    Location: 'USA',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
-  },
-  {
-    OrderID: 10248,
-    CustomerName: 'Vinet',
-
-    TotalAmount: 32.38,
-    OrderItems: 'Fresh Tomato',
-    Location: 'USA',
-    Status: 'pending',
-    StatusBg: '#FB9678',
-    ProductImage:
-      product6,
-  },
-  {
-    OrderID: 345653,
-    CustomerName: 'Carson Darrin',
-    TotalAmount: 56.34,
-    OrderItems: 'Butter Scotch',
-    Location: 'Delhi',
-    Status: 'complete',
-    StatusBg: '#8BE78B',
-    ProductImage:
-      product5,
-  },
-  {
-    OrderID: 390457,
-    CustomerName: 'Fran Perez',
-    TotalAmount: 93.31,
-    OrderItems: 'Candy Gucci',
-    Location: 'New York',
-    Status: 'active',
-    StatusBg: '#03C9D7',
-    ProductImage:
-      product7,
-  },
-  {
-    OrderID: 893486,
-    CustomerName: 'Anika Viseer',
-    TotalAmount: 93.31,
-    OrderItems: 'Night Lamp',
-    Location: 'Germany',
-    Status: 'canceled',
-    StatusBg: '#FF5C8E',
-    ProductImage:
-      product4,
-  },
-  {
-    OrderID: 748975,
+    id: 748975,
     CustomerName: 'Miron Vitold',
     TotalAmount: 23.99,
     OrderItems: 'Healthcare Erbology',
@@ -2250,7 +2176,7 @@ export const ordersData = [
       product1,
   },
   {
-    OrderID: 94757,
+    id: 94757,
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
@@ -2261,7 +2187,7 @@ export const ordersData = [
       product2,
   },
   {
-    OrderID: 944895,
+    id: 944895,
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
@@ -2272,7 +2198,7 @@ export const ordersData = [
       product3,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
@@ -2283,7 +2209,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
@@ -2294,7 +2220,7 @@ export const ordersData = [
       'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
   },
   {
-    OrderID: 874534,
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -2305,7 +2231,7 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 38489,
+    id: 38489,
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
@@ -2316,7 +2242,7 @@ export const ordersData = [
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
   },
   {
-    OrderID: 24546,
+    id: 24546,
     CustomerName: 'Frank',
     TotalAmount: 84.99,
     OrderItems: 'Pan Cake',
@@ -2327,7 +2253,7 @@ export const ordersData = [
       'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
   },
   {
-    OrderID: 874534,
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -2338,7 +2264,7 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 10248,
+    id: 10248,
     CustomerName: 'Vinet',
 
     TotalAmount: 32.38,
@@ -2350,7 +2276,7 @@ export const ordersData = [
       product6,
   },
   {
-    OrderID: 345653,
+    id: 345653,
     CustomerName: 'Carson Darrin',
     TotalAmount: 56.34,
     OrderItems: 'Butter Scotch',
@@ -2361,7 +2287,7 @@ export const ordersData = [
       product5,
   },
   {
-    OrderID: 390457,
+    id: 390457,
     CustomerName: 'Fran Perez',
     TotalAmount: 93.31,
     OrderItems: 'Candy Gucci',
@@ -2372,7 +2298,7 @@ export const ordersData = [
       product7,
   },
   {
-    OrderID: 893486,
+    id: 893486,
     CustomerName: 'Anika Viseer',
     TotalAmount: 93.31,
     OrderItems: 'Night Lamp',
@@ -2383,7 +2309,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 748975,
+    id: 748975,
     CustomerName: 'Miron Vitold',
     TotalAmount: 23.99,
     OrderItems: 'Healthcare Erbology',
@@ -2394,7 +2320,7 @@ export const ordersData = [
       product1,
   },
   {
-    OrderID: 94757,
+    id: 94757,
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
@@ -2405,7 +2331,7 @@ export const ordersData = [
       product2,
   },
   {
-    OrderID: 944895,
+    id: 944895,
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
@@ -2416,7 +2342,7 @@ export const ordersData = [
       product3,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
@@ -2427,7 +2353,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
@@ -2438,7 +2364,7 @@ export const ordersData = [
       'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
   },
   {
-    OrderID: 874534,
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -2449,7 +2375,7 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 38489,
+    id: 38489,
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
@@ -2460,7 +2386,7 @@ export const ordersData = [
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
   },
   {
-    OrderID: 24546,
+    id: 24546,
     CustomerName: 'Frank',
     TotalAmount: 84.99,
     OrderItems: 'Pan Cake',
@@ -2471,7 +2397,7 @@ export const ordersData = [
       'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
   },
   {
-    OrderID: 874534,
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -2482,7 +2408,7 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 10248,
+    id: 10248,
     CustomerName: 'Vinet',
 
     TotalAmount: 32.38,
@@ -2494,7 +2420,7 @@ export const ordersData = [
       product6,
   },
   {
-    OrderID: 345653,
+    id: 345653,
     CustomerName: 'Carson Darrin',
     TotalAmount: 56.34,
     OrderItems: 'Butter Scotch',
@@ -2505,7 +2431,7 @@ export const ordersData = [
       product5,
   },
   {
-    OrderID: 390457,
+    id: 390457,
     CustomerName: 'Fran Perez',
     TotalAmount: 93.31,
     OrderItems: 'Candy Gucci',
@@ -2516,7 +2442,7 @@ export const ordersData = [
       product7,
   },
   {
-    OrderID: 893486,
+    id: 893486,
     CustomerName: 'Anika Viseer',
     TotalAmount: 93.31,
     OrderItems: 'Night Lamp',
@@ -2527,7 +2453,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 748975,
+    id: 748975,
     CustomerName: 'Miron Vitold',
     TotalAmount: 23.99,
     OrderItems: 'Healthcare Erbology',
@@ -2538,7 +2464,7 @@ export const ordersData = [
       product1,
   },
   {
-    OrderID: 94757,
+    id: 94757,
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
@@ -2549,7 +2475,7 @@ export const ordersData = [
       product2,
   },
   {
-    OrderID: 944895,
+    id: 944895,
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
@@ -2560,7 +2486,7 @@ export const ordersData = [
       product3,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
@@ -2571,7 +2497,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
@@ -2582,7 +2508,7 @@ export const ordersData = [
       'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
   },
   {
-    OrderID: 874534,
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -2593,7 +2519,7 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 38489,
+    id: 38489,
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
@@ -2604,7 +2530,7 @@ export const ordersData = [
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
   },
   {
-    OrderID: 24546,
+    id: 24546,
     CustomerName: 'Frank',
     TotalAmount: 84.99,
     OrderItems: 'Pan Cake',
@@ -2615,7 +2541,7 @@ export const ordersData = [
       'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
   },
   {
-    OrderID: 874534,
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -2626,7 +2552,7 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 10248,
+    id: 10248,
     CustomerName: 'Vinet',
 
     TotalAmount: 32.38,
@@ -2638,7 +2564,7 @@ export const ordersData = [
       product6,
   },
   {
-    OrderID: 345653,
+    id: 345653,
     CustomerName: 'Carson Darrin',
     TotalAmount: 56.34,
     OrderItems: 'Butter Scotch',
@@ -2649,7 +2575,7 @@ export const ordersData = [
       product5,
   },
   {
-    OrderID: 390457,
+    id: 390457,
     CustomerName: 'Fran Perez',
     TotalAmount: 93.31,
     OrderItems: 'Candy Gucci',
@@ -2660,7 +2586,7 @@ export const ordersData = [
       product7,
   },
   {
-    OrderID: 893486,
+    id: 893486,
     CustomerName: 'Anika Viseer',
     TotalAmount: 93.31,
     OrderItems: 'Night Lamp',
@@ -2671,7 +2597,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 748975,
+    id: 748975,
     CustomerName: 'Miron Vitold',
     TotalAmount: 23.99,
     OrderItems: 'Healthcare Erbology',
@@ -2682,7 +2608,7 @@ export const ordersData = [
       product1,
   },
   {
-    OrderID: 94757,
+    id: 94757,
     CustomerName: 'Omar Darobe',
     TotalAmount: 95.99,
     OrderItems: 'Makeup Lancome Rouge',
@@ -2693,7 +2619,7 @@ export const ordersData = [
       product2,
   },
   {
-    OrderID: 944895,
+    id: 944895,
     CustomerName: 'Lulia albu',
     TotalAmount: 17.99,
     OrderItems: 'Skincare',
@@ -2704,7 +2630,7 @@ export const ordersData = [
       product3,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Penjani',
     TotalAmount: 59.99,
     OrderItems: 'Headphone',
@@ -2715,7 +2641,7 @@ export const ordersData = [
       product4,
   },
   {
-    OrderID: 845954,
+    id: 845954,
     CustomerName: 'Jie Yan',
     TotalAmount: 87.99,
     OrderItems: 'Shoes',
@@ -2726,7 +2652,7 @@ export const ordersData = [
       'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
   },
   {
-    OrderID: 874534,
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -2737,7 +2663,7 @@ export const ordersData = [
       'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
   },
   {
-    OrderID: 38489,
+    id: 38489,
     CustomerName: 'Miron',
     TotalAmount: 87.99,
     OrderItems: 'Ice Cream',
@@ -2748,7 +2674,7 @@ export const ordersData = [
       'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
   },
   {
-    OrderID: 24546,
+    id: 24546,
     CustomerName: 'Frank',
     TotalAmount: 84.99,
     OrderItems: 'Pan Cake',
@@ -2759,7 +2685,151 @@ export const ordersData = [
       'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
   },
   {
-    OrderID: 874534,
+    id: 874534,
+    CustomerName: 'Danai',
+    TotalAmount: 122.99,
+    OrderItems: 'Watch',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
+  },
+  {
+    id: 10248,
+    CustomerName: 'Vinet',
+
+    TotalAmount: 32.38,
+    OrderItems: 'Fresh Tomato',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      product6,
+  },
+  {
+    id: 345653,
+    CustomerName: 'Carson Darrin',
+    TotalAmount: 56.34,
+    OrderItems: 'Butter Scotch',
+    Location: 'Delhi',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      product5,
+  },
+  {
+    id: 390457,
+    CustomerName: 'Fran Perez',
+    TotalAmount: 93.31,
+    OrderItems: 'Candy Gucci',
+    Location: 'New York',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      product7,
+  },
+  {
+    id: 893486,
+    CustomerName: 'Anika Viseer',
+    TotalAmount: 93.31,
+    OrderItems: 'Night Lamp',
+    Location: 'Germany',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      product4,
+  },
+  {
+    id: 748975,
+    CustomerName: 'Miron Vitold',
+    TotalAmount: 23.99,
+    OrderItems: 'Healthcare Erbology',
+    Location: 'Spain',
+    Status: 'rejected',
+    StatusBg: 'red',
+    ProductImage:
+      product1,
+  },
+  {
+    id: 94757,
+    CustomerName: 'Omar Darobe',
+    TotalAmount: 95.99,
+    OrderItems: 'Makeup Lancome Rouge',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      product2,
+  },
+  {
+    id: 944895,
+    CustomerName: 'Lulia albu',
+    TotalAmount: 17.99,
+    OrderItems: 'Skincare',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      product3,
+  },
+  {
+    id: 845954,
+    CustomerName: 'Penjani',
+    TotalAmount: 59.99,
+    OrderItems: 'Headphone',
+    Location: 'USA',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      product4,
+  },
+  {
+    id: 845954,
+    CustomerName: 'Jie Yan',
+    TotalAmount: 87.99,
+    OrderItems: 'Shoes',
+    Location: 'USA',
+    Status: 'pending',
+    StatusBg: '#FB9678',
+    ProductImage:
+      'https://cdn.shopclues.com/images1/thumbnails/104158/320/320/148648730-104158193-1592481791.jpg',
+  },
+  {
+    id: 874534,
+    CustomerName: 'Danai',
+    TotalAmount: 122.99,
+    OrderItems: 'Watch',
+    Location: 'USA',
+    Status: 'canceled',
+    StatusBg: '#FF5C8E',
+    ProductImage:
+      'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/pop-womens-garmin-watches-1641919013.jpg?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*',
+  },
+  {
+    id: 38489,
+    CustomerName: 'Miron',
+    TotalAmount: 87.99,
+    OrderItems: 'Ice Cream',
+    Location: 'USA',
+    Status: 'active',
+    StatusBg: '#03C9D7',
+    ProductImage:
+      'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/dairy-free-ice-cream-eae372d.jpg',
+  },
+  {
+    id: 24546,
+    CustomerName: 'Frank',
+    TotalAmount: 84.99,
+    OrderItems: 'Pan Cake',
+    Location: 'Delhi',
+    Status: 'complete',
+    StatusBg: '#8BE78B',
+    ProductImage:
+      'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80',
+  },
+  {
+    id: 874534,
     CustomerName: 'Danai',
     TotalAmount: 122.99,
     OrderItems: 'Watch',
@@ -3019,29 +3089,35 @@ export const SparklineAreaData = [
 ];
 
 export const lineCustomSeries = [
-  { dataSource: lineChartData[0],
+  {
+    dataSource: lineChartData[0],
     xName: 'x',
     yName: 'y',
     name: 'Germany',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+    type: 'Line'
+  },
 
-  { dataSource: lineChartData[1],
+  {
+    dataSource: lineChartData[1],
     xName: 'x',
     yName: 'y',
     name: 'England',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+    type: 'Line'
+  },
 
-  { dataSource: lineChartData[2],
+  {
+    dataSource: lineChartData[2],
     xName: 'x',
     yName: 'y',
     name: 'India',
     width: '2',
     marker: { visible: true, width: 10, height: 10 },
-    type: 'Line' },
+    type: 'Line'
+  },
 
 ];
 
@@ -3104,7 +3180,8 @@ export const stackedChartData = [
 
 export const stackedCustomSeries = [
 
-  { dataSource: stackedChartData[0],
+  {
+    dataSource: stackedChartData[0],
     xName: 'x',
     yName: 'y',
     name: 'Budget',
@@ -3113,7 +3190,8 @@ export const stackedCustomSeries = [
 
   },
 
-  { dataSource: stackedChartData[1],
+  {
+    dataSource: stackedChartData[1],
     xName: 'x',
     yName: 'y',
     name: 'Expense',
@@ -3160,7 +3238,7 @@ export const kanbanData = [
     Assignee: 'Nancy Davloio',
     RankId: 1,
     Color: '#02897B',
-    ClassName: 'e-story, e-low, e-nancy-davloio',
+    classNameName: 'e-story, e-low, e-nancy-davloio',
   },
   {
     Id: 'Task 2',
@@ -3174,7 +3252,7 @@ export const kanbanData = [
     Assignee: 'Andrew Fuller',
     RankId: 1,
     Color: '#673AB8',
-    ClassName: 'e-improvement, e-normal, e-andrew-fuller',
+    classNameName: 'e-improvement, e-normal, e-andrew-fuller',
   },
   {
     Id: 'Task 3',
@@ -3188,7 +3266,7 @@ export const kanbanData = [
     Assignee: 'Janet Leverling',
     RankId: 2,
     Color: '#1F88E5',
-    ClassName: 'e-others, e-critical, e-janet-leverling',
+    classNameName: 'e-others, e-critical, e-janet-leverling',
   },
   {
     Id: 'Task 4',
@@ -3202,7 +3280,7 @@ export const kanbanData = [
     Assignee: 'Janet Leverling',
     RankId: 2,
     Color: '#E64A19',
-    ClassName: 'e-bug, e-release, e-janet-leverling',
+    classNameName: 'e-bug, e-release, e-janet-leverling',
   },
   {
     Id: 'Task 5',
@@ -3216,7 +3294,7 @@ export const kanbanData = [
     Assignee: 'Steven walker',
     RankId: 1,
     Color: '#E64A19',
-    ClassName: 'e-bug, e-low, e-steven-walker',
+    classNameName: 'e-bug, e-low, e-steven-walker',
   },
   {
     Id: 'Task 6',
@@ -3230,7 +3308,7 @@ export const kanbanData = [
     Assignee: 'Robert King',
     RankId: 1,
     Color: '#673AB8',
-    ClassName: 'e-improvement, e-low, e-robert-king',
+    classNameName: 'e-improvement, e-low, e-robert-king',
   },
   {
     Id: 'Task 7',
@@ -3244,7 +3322,7 @@ export const kanbanData = [
     Assignee: 'Nancy Davloio',
     RankId: 2,
     Color: '#E64A19',
-    ClassName: 'e-bug, e-release, e-nancy-davloio',
+    classNameName: 'e-bug, e-release, e-nancy-davloio',
   },
   {
     Id: 'Task 8',
@@ -3258,7 +3336,7 @@ export const kanbanData = [
     Assignee: 'Margaret hamilt',
     RankId: 3,
     Color: '#02897B',
-    ClassName: 'e-story, e-low, e-margaret-hamilt',
+    classNameName: 'e-story, e-low, e-margaret-hamilt',
   },
   {
     Id: 'Task 9',
@@ -3272,7 +3350,7 @@ export const kanbanData = [
     Assignee: 'Steven walker',
     RankId: 1,
     Color: '#02897B',
-    ClassName: 'e-story, e-high, e-steven-walker',
+    classNameName: 'e-story, e-high, e-steven-walker',
   },
   {
     Id: 'Task 10',
@@ -3286,7 +3364,7 @@ export const kanbanData = [
     Assignee: 'Margaret hamilt',
     RankId: 4,
     Color: '#02897B',
-    ClassName: 'e-story, e-high, e-margaret-hamilt',
+    classNameName: 'e-story, e-high, e-margaret-hamilt',
   },
   {
     Id: 'Task 11',
@@ -3300,7 +3378,7 @@ export const kanbanData = [
     Assignee: 'Janet Leverling',
     RankId: 4,
     Color: '#E64A19',
-    ClassName: 'e-bug, e-critical, e-janet-leverling',
+    classNameName: 'e-bug, e-critical, e-janet-leverling',
   },
   {
     Id: 'Task 12',
@@ -3314,7 +3392,7 @@ export const kanbanData = [
     Assignee: 'Janet Leverling',
     RankId: 4,
     Color: '#02897B',
-    ClassName: 'e-story, e-normal, e-janet-leverling',
+    classNameName: 'e-story, e-normal, e-janet-leverling',
   },
   {
     Id: 'Task 13',
@@ -3328,7 +3406,7 @@ export const kanbanData = [
     Assignee: 'Andrew Fuller',
     RankId: 4,
     Color: '#02897B',
-    ClassName: 'e-story, e-release, e-andrew-fuller',
+    classNameName: 'e-story, e-release, e-andrew-fuller',
   },
   {
     Id: 'Task 14',
@@ -3342,7 +3420,7 @@ export const kanbanData = [
     Assignee: 'Margaret hamilt',
     RankId: 1,
     Color: '#02897B',
-    ClassName: 'e-story, e-low, e-margaret-hamilt',
+    classNameName: 'e-story, e-low, e-margaret-hamilt',
   },
   {
     Id: 'Task 15',
@@ -3356,7 +3434,7 @@ export const kanbanData = [
     Assignee: 'Margaret hamilt',
     RankId: 5,
     Color: '#02897B',
-    ClassName: 'e-story, e-high, e-margaret-hamilt',
+    classNameName: 'e-story, e-high, e-margaret-hamilt',
   },
   {
     Id: 'Task 16',
@@ -3370,7 +3448,7 @@ export const kanbanData = [
     Assignee: 'Steven walker',
     RankId: 6,
     Color: '#1F88E5',
-    ClassName: 'e-others, e-release, e-steven-walker',
+    classNameName: 'e-others, e-release, e-steven-walker',
   },
   {
     Id: 'Task 17',
@@ -3384,7 +3462,7 @@ export const kanbanData = [
     Assignee: 'Janet Leverling',
     RankId: 7,
     Color: '#02897B',
-    ClassName: 'e-story, e-release, e-janet-leverling',
+    classNameName: 'e-story, e-release, e-janet-leverling',
   },
   {
     Id: 'Task 18',
@@ -3398,7 +3476,7 @@ export const kanbanData = [
     Assignee: 'Nancy Davloio',
     RankId: 1,
     Color: '#02897B',
-    ClassName: 'e-story, e-critical, e-nancy-davloio',
+    classNameName: 'e-story, e-critical, e-nancy-davloio',
   },
   {
     Id: 'Task 19',
@@ -3412,7 +3490,7 @@ export const kanbanData = [
     Assignee: 'Nancy Davloio',
     RankId: 5,
     Color: '#02897B',
-    ClassName: 'e-story, e-normal, e-nancy-davloio',
+    classNameName: 'e-story, e-normal, e-nancy-davloio',
   },
   {
     Id: 'Task 20',
@@ -3426,7 +3504,7 @@ export const kanbanData = [
     Assignee: 'Andrew Fuller',
     RankId: 5,
     Color: '#673AB8',
-    ClassName: 'e-improvement, e-low, e-andrew-fuller',
+    classNameName: 'e-improvement, e-low, e-andrew-fuller',
   },
   {
     Id: 'Task 21',
@@ -3440,7 +3518,7 @@ export const kanbanData = [
     Assignee: 'Nancy Davloio',
     RankId: 5,
     Color: '#e91e64',
-    ClassName: 'e-epic, e-high, e-nancy-davloio',
+    classNameName: 'e-epic, e-high, e-nancy-davloio',
   },
   {
     Id: 'Task 22',
@@ -3454,7 +3532,7 @@ export const kanbanData = [
     Assignee: 'Steven walker',
     RankId: 6,
     Color: '#1F88E5',
-    ClassName: 'e-others, e-high, e-steven-walker',
+    classNameName: 'e-others, e-high, e-steven-walker',
   },
   {
     Id: 'Task 23',
@@ -3468,7 +3546,7 @@ export const kanbanData = [
     Assignee: 'Janet Leverling',
     RankId: 6,
     Color: '#E64A19',
-    ClassName: 'e-bug, e-low, e-janet-leverling',
+    classNameName: 'e-bug, e-low, e-janet-leverling',
   },
   {
     Id: 'Task 24',
@@ -3482,7 +3560,7 @@ export const kanbanData = [
     Assignee: 'Steven walker',
     RankId: 1,
     Color: '#E64A19',
-    ClassName: 'e-bug, e-critical, e-steven-walker',
+    classNameName: 'e-bug, e-critical, e-steven-walker',
   },
   {
     Id: 'Task 25',
@@ -3496,7 +3574,7 @@ export const kanbanData = [
     Assignee: 'Nancy Davloio',
     RankId: 2,
     Color: '#E64A19',
-    ClassName: 'e-bug, e-release, e-nancy-davloio',
+    classNameName: 'e-bug, e-release, e-nancy-davloio',
   },
 ];
 
